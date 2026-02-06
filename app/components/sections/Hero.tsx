@@ -9,7 +9,7 @@ import DeveloperIllustration from "../ui/DeveloperIllustration";
 export default function Hero() {
   const roles = [
     "Building Scalable Web Applications",
-    "React & Next.js Specialist",
+    "React & Angular Specialist",
     "Frontend Performance Enthusiast",
   ];
 
