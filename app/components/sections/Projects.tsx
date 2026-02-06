@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
 
+/* -------------------- Project Data -------------------- */
+
 const projects = [
   {
     title: "CodingGenie",
@@ -26,6 +28,8 @@ const projects = [
     github: "",
   },
 ];
+
+/* -------------------- Component -------------------- */
 
 export default function Projects() {
   return (
@@ -54,42 +58,58 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
             >
-              {/* Preview Image */}
+              {/* -------------------- Preview Image -------------------- */}
               <div className="relative h-60 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className={`
-      ${project.imageFit}
-      transition-transform duration-500
-      group-hover:scale-110
-    `}
+                  className={`${project.imageFit} transition-transform duration-500 group-hover:scale-110`}
                 />
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-6">
-                  {/* Live site button */}
+                {/* -------------------- Overlay (Desktop Hover / Mobile Always Visible) -------------------- */}
+                <div
+                  className="
+                    absolute inset-0 bg-black/60
+                    opacity-100 md:opacity-0
+                    md:group-hover:opacity-100
+                    transition
+                    flex items-center justify-center gap-4
+                  "
+                >
+                  {/* Live Button */}
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-primary text-white px-5 py-3 rounded-xl hover:scale-105 transition"
+                      className="
+                        flex items-center gap-2
+                        bg-primary text-white rounded-xl transition
+                        px-4 py-2 text-sm
+                        sm:px-5 sm:py-3 sm:text-base
+                        hover:scale-105
+                      "
                     >
                       Live
                       <FaExternalLinkAlt />
                     </a>
                   )}
 
-                  {/* GitHub button */}
+                  {/* GitHub Button */}
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 border border-white text-white px-5 py-3 rounded-xl hover:bg-white hover:text-primary transition"
+                      className="
+                        flex items-center gap-2
+                        border border-white text-white rounded-xl transition
+                        px-4 py-2 text-sm
+                        sm:px-5 sm:py-3 sm:text-base
+                        hover:bg-white hover:text-primary
+                      "
                     >
                       GitHub
                       <FaGithub />
@@ -98,7 +118,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Content */}
+              {/* -------------------- Content -------------------- */}
               <div className="p-8">
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {project.title}
