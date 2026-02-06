@@ -78,26 +78,28 @@ export default function Hero() {
 
           <h2
             className="
-              text-primary font-semibold mt-4 h-8
-              text-lg
-              sm:text-xl
-              md:text-2xl
-            "
+    text-primary font-semibold mt-4
+    h-12 sm:h-14 md:h-16
+    text-lg sm:text-xl md:text-2xl
+  "
           >
             {text}
             <span className="animate-pulse">|</span>
           </h2>
 
+          <div className="h-4 sm:h-3 md:h-2" />
+
           <p
             className="
-              text-gray-600 mt-5
-              text-base
-              sm:text-lg
-              max-w-xl
-              mx-auto md:mx-0
-            "
+    text-gray-600
+    text-base sm:text-lg
+    leading-relaxed
+    max-w-xl
+    mx-auto md:mx-0
+  "
           >
-            Full-Stack Developer Specializing in Modern Frontend Development for Scalable Web Applications
+            Full-Stack Developer Specializing in Modern Frontend Development for
+            Scalable Web Applications
           </p>
 
           <div className="flex justify-center md:justify-start gap-3 mt-7">
@@ -109,11 +111,11 @@ export default function Hero() {
                 }
               }}
               className="
-      bg-primary text-white rounded-xl shadow-md transition
-      px-4 py-2 text-sm
-      sm:px-5 sm:py-2.5 sm:text-base
-      hover:scale-105
-    "
+                bg-primary text-white rounded-xl shadow-md transition
+                px-4 py-2 text-sm
+                sm:px-5 sm:py-2.5 sm:text-base
+                hover:scale-105
+              "
             >
               View Projects
             </button>
