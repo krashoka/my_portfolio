@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const links = [
-  { name: "Home", id: "home" },
+  // { name: "Home", id: "home" },
   { name: "About", id: "about" },
   { name: "Experience", id: "experience" },
   { name: "Skills", id: "skills" },
@@ -69,10 +70,27 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <h1 className="text-2xl font-extrabold text-primary tracking-wide cursor-pointer">
-          Ashok Kumar
-        </h1>
+        {/* -------- Logo -------- */}
+        <div
+          onClick={() => scrollTo("home")}
+          className="flex items-center gap-3 cursor-pointer hover:scale-105 transition"
+        >
+          <Image
+            src="/icon.png"
+            alt="Ashok Kumar Logo"
+            width={36}
+            height={36}
+            priority
+            className="rounded-md"
+          />
 
+          {/* Name visible only on desktop */}
+          <span className="text-xl font-bold text-primary tracking-wide">
+            ASHOK KUMAR
+          </span>
+        </div>
+
+        {/* -------- Navigation -------- */}
         <ul className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <li
@@ -87,7 +105,7 @@ export default function Navbar() {
               {link.name}
 
               {active === link.id && (
-                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-primary rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-primary rounded-full" />
               )}
             </li>
           ))}
