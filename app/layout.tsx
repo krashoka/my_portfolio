@@ -13,34 +13,49 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://ashok-kumar-v1.vercel.app"),
+
   title: "Ashok Kumar | Full Stack Developer",
   description:
-    "Ashok Kumar – Full Stack Developer specializing in React, Next.js, Angular, and scalable web applications.",
+    "Ashok Kumar – Full Stack Developer specializing in React, Next.js, Angular, Java, and scalable web applications.",
+
   keywords: [
     "Ashok Kumar",
     "Frontend Developer",
     "React Developer",
     "Next.js Developer",
+    "Angular Developer",
+    "Java Developer",
     "Full Stack Developer Portfolio",
   ],
+
   authors: [{ name: "Ashok Kumar" }],
+
   openGraph: {
     title: "Ashok Kumar | Full Stack Developer",
     description:
       "Portfolio of Ashok Kumar – building scalable modern web applications.",
-    url: "https://your-domain.vercel.app",
-    siteName: "Ashok Portfolio",
+    url: "https://ashok-kumar-v1.vercel.app",
+    siteName: "Ashok Kumar Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Ashok Kumar Portfolio",
+        alt: "Ashok Kumar | Full Stack Developer Portfolio",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ashok Kumar | Full Stack Developer",
+    description:
+      "Full Stack Developer specializing in modern frontend and scalable web applications.",
+    images: ["/og-image.png"],
   },
 };
 
