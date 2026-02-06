@@ -79,7 +79,7 @@ export default function About() {
               mx-auto md:mx-0
             "
           >
-            I am a Full-Stack Developer with 3.5+ years of experience building
+            I'm a Full-Stack Developer with 3.5+ years of experience building
             scalable, high-performance web applications using React, Angular,
             Next.js, and modern frontend ecosystems. I specialize in reusable
             component architecture, performance optimization, and building

@@ -8,9 +8,9 @@ import DeveloperIllustration from "../ui/DeveloperIllustration";
 
 export default function Hero() {
   const roles = [
-    "Building Scalable Web Applications",
-    "React & Angular Specialist",
-    "Frontend Performance Enthusiast",
+    "Building Scalable Full-Stack Web Applications",
+    "React, Angular & Next.js Specialist",
+    "Performance-Driven Frontend & API Development",
   ];
 
   const [text, setText] = useState("");
@@ -97,8 +97,7 @@ export default function Hero() {
               mx-auto md:mx-0
             "
           >
-            I build scalable, high-performance web applications using React,
-            Next.js, and modern frontend technologies.
+            Full-Stack Developer Specializing in Modern Frontend Development for Scalable Web Applications
           </p>
 
           <div className="flex justify-center md:justify-start gap-3 mt-7">
@@ -134,8 +133,21 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center md:justify-start gap-5 mt-7 text-xl text-gray-600">
-            <FaGithub className="cursor-pointer hover:text-primary" />
-            <FaLinkedin className="cursor-pointer hover:text-primary" />
+            <a
+              href="https://github.com/krashoka"
+              target="_blank"
+              className="hover:text-primary hover:scale-110 transition"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ashok-kumar-869093174/"
+              target="_blank"
+              className="hover:text-primary hover:scale-110 transition"
+            >
+              <FaLinkedin />
+            </a>
           </div>
         </motion.div>
 
