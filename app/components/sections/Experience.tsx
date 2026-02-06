@@ -13,13 +13,11 @@ const experiences = [
     location: "Chennai, India",
     period: "Feb 2024 – Present",
     points: [
-      "Leading frontend development for scalable product interfaces using React.js, Redux patterns, and reusable UI architectures.",
-      "Built a modular, reusable UI component library with Storybook ensuring design-system consistency, accessibility, and cross-browser compatibility.",
-      "Implemented high-performance React components using Hooks, memoization, and optimized re-renders, improving application responsiveness.",
-      "Designed reliable REST API integration patterns with robust error handling and efficient data-fetching strategies.",
-      "Refactored legacy web modules into modern, maintainable React components, reducing future development effort by 25%.",
-      "Participated in code reviews to maintain high code quality and long-term maintainability.",
-      "Collaborated with designers, backend engineers, and product managers in an Agile environment for smooth feature delivery.",
+      "Leading frontend development with React, Redux, and reusable UI architectures",
+      "Built a modular UI component library with Storybook",
+      "Optimized React performance using Hooks and memoization",
+      "Designed scalable REST API integration patterns",
+      "Refactored legacy modules, reducing future development effort by 25%",
     ],
     side: "left",
   },
@@ -29,11 +27,10 @@ const experiences = [
     location: "Kolkata, India",
     period: "Sep 2019 – Jan 2021",
     points: [
-      "Developed Angular UI components for internal enterprise-grade applications.",
-      "Integrated frontend modules with backend services using REST APIs.",
-      "Collaborated with cross-functional teams to deliver UI enhancements aligned with enterprise standards.",
-      "Fixed UI bugs, improved responsiveness, and optimized API calls, helping reduce user-reported issues by 20%.",
-      "Led a frontend support team during lockdown operations, ensuring uninterrupted delivery and support.",
+      "Developed Angular UI components for enterprise applications",
+      "Integrated frontend with REST APIs",
+      "Improved responsiveness and reduced UI issues by 20%",
+      "Collaborated with cross-functional teams",
     ],
     side: "right",
   },
@@ -65,7 +62,7 @@ const highlightKeywords = (text: string) => {
       </span>
     ) : (
       part
-    )
+    ),
   );
 };
 
@@ -106,13 +103,7 @@ export default function Experience() {
 
 /* -------------------- Card Component -------------------- */
 
-function ExperienceCard({
-  exp,
-  index,
-}: {
-  exp: any;
-  index: number;
-}) {
+function ExperienceCard({ exp, index }: { exp: any; index: number }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -132,20 +123,16 @@ function ExperienceCard({
         }`}
       >
         <div className="bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition">
-          <h3 className="text-lg font-semibold text-gray-800">
-            {exp.role}
-          </h3>
+          <h3 className="text-lg font-semibold text-gray-800">{exp.role}</h3>
 
-          <p className="text-primary font-medium text-sm">
-            {exp.company}
-          </p>
+          <p className="text-primary font-medium text-sm">{exp.company}</p>
 
           <p className="text-gray-500 text-xs mt-1">
             {exp.location} • {exp.period}
           </p>
 
           {/* Bullet Points */}
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-4 space-y-3 text-left">
             {(expanded ? exp.points : exp.points.slice(0, 3)).map(
               (point: string, idx: number) => (
                 <li
@@ -157,7 +144,7 @@ function ExperienceCard({
                     {highlightKeywords(point)}
                   </span>
                 </li>
-              )
+              ),
             )}
           </ul>
 
@@ -165,7 +152,7 @@ function ExperienceCard({
           {exp.points.length > 3 && (
             <button
               onClick={() => setExpanded(!expanded)}
-              className="mt-3 text-sm text-primary font-medium md:hidden hover:underline"
+              className="mt-3 text-sm text-primary font-medium hover:underline"
             >
               {expanded ? "Show less" : "Show more"}
             </button>
